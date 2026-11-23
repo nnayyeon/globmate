@@ -155,7 +155,7 @@ function App() {
     setUser(current => ({ ...current, [field]: value }))
   }
 
-  const query = search.toLowerCase()
+  const query = search.trim().toLowerCase()
   const filteredEvents = events.filter(event => {
     const categoryMatch = category === 'All' || event.category === category
     const searchMatch = [
@@ -173,7 +173,11 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar loggedIn={loggedIn} onNavigate={navigate} />
+      <Navbar
+        loggedIn={loggedIn}
+        currentPage={page}
+        onNavigate={navigate}
+      />
 
       <main>
         {page === 'home' && <Home onNavigate={navigate} />}

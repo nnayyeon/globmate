@@ -33,19 +33,33 @@ function Explore({
       </p>
 
       <div className="search-area">
-        <input
-          type="search"
-          placeholder="Search events, activities, cities..."
-          value={search}
-          onChange={event => onSearchChange(event.target.value)}
-        />
+        <label className="search-field">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle cx="10.8" cy="10.8" r="6.8" />
+            <path d="m16 16 4.5 4.5" />
+          </svg>
+          <input
+            type="search"
+            aria-label="Search events and activities"
+            placeholder="Search events, activities, cities..."
+            value={search}
+            onChange={event => onSearchChange(event.target.value)}
+          />
+        </label>
       </div>
 
       <div className="filters">
         {categories.map(item => (
           <button
             key={item}
+            type="button"
             className={category === item ? 'filter active' : 'filter'}
+            aria-pressed={category === item}
             onClick={() => onCategoryChange(item)}
           >
             {item}
@@ -54,23 +68,39 @@ function Explore({
       </div>
 
       <p className="demo-note">
-        Sample activities for design demonstration. These are not confirmed
+        Demo data only. These sample activities are not real or confirmed
         upcoming events.
       </p>
 
-      <div className="event-grid">
-        {events.map(event => (
-          <EventCard
-            key={event.id}
-            event={event}
-            saved={saved.includes(event.id)}
-            onToggleSaved={onToggleSaved}
-          />
-        ))}
-      </div>
-
-      {events.length === 0 && (
-        <div className="empty">No matching activities found.</div>
+      {events.length > 0 ? (
+        <div className="event-grid">
+          {events.map(event => (
+            <EventCard
+              key={event.id}
+              event={event}
+              saved={saved.includes(event.id)}
+              onToggleSaved={onToggleSaved}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="empty">
+          <div className="empty-icon" aria-hidden="true">
+            ⌕
+          </div>
+          <h3>No matching activities</h3>
+          <p>Try another search or clear your filters to see all activities.</p>
+          <button
+            className="btn secondary"
+            type="button"
+            onClick={() => {
+              onSearchChange('')
+              onCategoryChange('All')
+            }}
+          >
+            Clear filters
+          </button>
+        </div>
       )}
     </section>
   )

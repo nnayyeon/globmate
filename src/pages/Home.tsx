@@ -9,7 +9,7 @@ function Home({ onNavigate }: HomeProps) {
     <>
       <section className="hero">
         <div className="hero-content">
-          <div className="eyebrow">● A SPACE FOR GLOBAL STUDENTS</div>
+          <div className="eyebrow">A SPACE FOR GLOBAL STUDENTS</div>
 
           <h1>
             New country.
@@ -20,8 +20,8 @@ function Home({ onNavigate }: HomeProps) {
           </h1>
 
           <p>
-            Studying abroad is a big adventure. Finding your people shouldn&apos;t
-            be hard. Meet, explore, and belong with globmate.
+            Find your people, discover local activities, and make Kuala Lumpur
+            feel more like home.
           </p>
 
           <div className="actions">
@@ -42,24 +42,12 @@ function Home({ onNavigate }: HomeProps) {
         </div>
 
         <div className="hero-visual">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-
-          <div className="globe">◎</div>
-
-          <div className="floating-card top-card">
-            <strong>👋 Hey, I&apos;m Alex!</strong>
-            <small>New in Kuala Lumpur 🇲🇾</small>
-          </div>
-
-          <div className="floating-card bottom-card">
-            <strong>Welcome aboard!</strong>
-            <small>Let&apos;s explore together ✨</small>
-          </div>
-
-          <div className="visual-caption">
-            DIFFERENT PLACES. SHARED EXPERIENCES.
-          </div>
+          <img
+            className="hero-image"
+            src="/images/hero-students.jpg"
+            alt="International students smiling together on campus"
+            fetchPriority="high"
+          />
         </div>
       </section>
 
@@ -77,51 +65,88 @@ function Home({ onNavigate }: HomeProps) {
             className="feature-card"
             onClick={() => onNavigate('explore')}
           >
-            <div className="feature-icon">🌍</div>
-            <h3>Explore</h3>
-            <p>Discover activities and events.</p>
-            <span>Explore →</span>
+            <img
+              className="feature-image"
+              src="/images/music-festival.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="feature-content">
+              <h3>Explore</h3>
+              <p>Discover activities and events.</p>
+              <span>Explore →</span>
+            </div>
           </button>
 
           <button
             className="feature-card"
             onClick={() => onNavigate('community')}
           >
-            <div className="feature-icon">💬</div>
-            <h3>Connect</h3>
-            <p>Meet students from around the world.</p>
-            <span>Explore →</span>
+            <img
+              className="feature-image"
+              src="/images/connect-friends.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="feature-content">
+              <h3>Connect</h3>
+              <p>Meet students from around the world.</p>
+              <span>Explore →</span>
+            </div>
           </button>
 
           <button
             className="feature-card"
             onClick={() => onNavigate('auth')}
           >
-            <div className="feature-icon">✨</div>
-            <h3>Belong</h3>
-            <p>Build your own global community.</p>
-            <span>Explore →</span>
+            <img
+              className="feature-image"
+              src="/images/student-meetup.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="feature-content">
+              <h3>Belong</h3>
+              <p>Build your own global community.</p>
+              <span>Explore →</span>
+            </div>
           </button>
         </div>
       </section>
 
       <section className="cta">
-        <span>YOUR NEXT CHAPTER STARTS HERE</span>
+        <img
+          className="cta-image"
+          src="/images/community-banner.jpg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="cta-content">
+          <span>YOUR NEXT CHAPTER STARTS HERE</span>
 
-        <h2>
-          The world feels smaller
-          <br />
-          when we connect.
-        </h2>
+          <h2>
+            The world feels smaller
+            <br />
+            when we connect.
+          </h2>
 
-        <p>A new community for international students.</p>
+          <p>A new community for international students.</p>
 
-        <button
-          className="btn outline-light"
-          onClick={() => onNavigate('auth')}
-        >
-          Join globmate ↗
-        </button>
+          <button
+            className="btn outline-light"
+            onClick={() => onNavigate('auth')}
+          >
+            Join globmate ↗
+          </button>
+        </div>
       </section>
     </>
   )

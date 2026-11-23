@@ -31,6 +31,11 @@ function Community({
         Ask questions, share experiences, and find your people.
       </p>
 
+      <p className="demo-note">
+        Demo community only. Sample posts and your posts, likes, and comments
+        are saved in this browser, not shared with other users.
+      </p>
+
       <div className="community-layout">
         <div className="post-list">
           {posts.map(post => (

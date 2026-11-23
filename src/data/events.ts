@@ -4,7 +4,7 @@ export type EventItem = {
   category: string
   location: string
   description: string
-  icon: string
+  image: string
 }
 
 export const events: EventItem[] = [
@@ -14,7 +14,7 @@ export const events: EventItem[] = [
     category: 'Social',
     location: 'Kuala Lumpur',
     description: 'Meet new friends from around the world.',
-    icon: '🌍',
+    image: '/images/student-meetup.jpg',
   },
   {
     id: 2,
@@ -22,15 +22,15 @@ export const events: EventItem[] = [
     category: 'Tech',
     location: 'Kuala Lumpur',
     description: 'Connect with students interested in AI and coding.',
-    icon: '💻',
+    image: '/images/tech-conference.jpg',
   },
   {
     id: 3,
-    title: 'Photography Walk',
+    title: 'Cultural Photography Walk',
     category: 'Creative',
     location: 'Kuala Lumpur',
-    description: 'Explore the city and take beautiful photos.',
-    icon: '📷',
+    description: 'Capture colorful performances and traditions around the city.',
+    image: '/images/cultural-event.jpg',
   },
   {
     id: 4,
@@ -38,22 +38,22 @@ export const events: EventItem[] = [
     category: 'Language',
     location: 'Kuala Lumpur',
     description: 'Practice languages and share cultures.',
-    icon: '💬',
+    image: '/images/language-exchange.jpg',
   },
   {
     id: 5,
-    title: 'Art & Museum Day',
+    title: 'Creative Campus Workshop',
     category: 'Creative',
     location: 'Kuala Lumpur',
-    description: 'Discover local art with international students.',
-    icon: '🎨',
+    description: 'Collaborate on a hands-on creative project with other students.',
+    image: '/images/workshop.jpg',
   },
   {
     id: 6,
-    title: 'Campus Coffee Chat',
+    title: 'Campus Music Festival',
     category: 'Social',
     location: 'Kuala Lumpur',
-    description: 'Share university life tips over coffee.',
-    icon: '☕',
+    description: 'Enjoy live music and an energetic night with fellow students.',
+    image: '/images/music-festival.jpg',
   },
 ]

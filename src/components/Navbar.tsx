@@ -2,25 +2,61 @@ import type { Page } from '../types'
 
 type NavbarProps = {
   loggedIn: boolean
+  currentPage: Page
   onNavigate: (page: Page) => void
 }
 
-function Navbar({ loggedIn, onNavigate }: NavbarProps) {
+function Navbar({ loggedIn, currentPage, onNavigate }: NavbarProps) {
   return (
     <header className="navbar">
-      <button className="logo" onClick={() => onNavigate('home')}>
+      <button
+        className="logo"
+        type="button"
+        aria-label="Globmate home"
+        onClick={() => onNavigate('home')}
+      >
         globmate<span>.</span>
       </button>
 
       <nav>
-        <button onClick={() => onNavigate('home')}>Home</button>
-        <button onClick={() => onNavigate('explore')}>Explore</button>
-        <button onClick={() => onNavigate('community')}>Community</button>
-        <button onClick={() => onNavigate('saved')}>Saved</button>
+        <button
+          className="nav-link"
+          type="button"
+          aria-current={currentPage === 'home' ? 'page' : undefined}
+          onClick={() => onNavigate('home')}
+        >
+          Home
+        </button>
+        <button
+          className="nav-link"
+          type="button"
+          aria-current={currentPage === 'explore' ? 'page' : undefined}
+          onClick={() => onNavigate('explore')}
+        >
+          Explore
+        </button>
+        <button
+          className="nav-link"
+          type="button"
+          aria-current={currentPage === 'community' ? 'page' : undefined}
+          onClick={() => onNavigate('community')}
+        >
+          Community
+        </button>
+        <button
+          className="nav-link"
+          type="button"
+          aria-current={currentPage === 'saved' ? 'page' : undefined}
+          onClick={() => onNavigate('saved')}
+        >
+          Saved
+        </button>
       </nav>
 
       <button
         className="btn dark"
+        type="button"
+        aria-current={currentPage === 'profile' ? 'page' : undefined}
         onClick={() => onNavigate(loggedIn ? 'profile' : 'auth')}
       >
         {loggedIn ? 'My Profile' : 'Join now ↗'}

@@ -10,6 +10,8 @@ type SavedProps = {
 }
 
 function Saved({ events, saved, onToggleSaved, onNavigate }: SavedProps) {
+  const savedEvents = events.filter(event => saved.includes(event.id))
+
   return (
     <section className="section page-section">
       <span className="eyebrow">YOUR COLLECTION</span>
@@ -20,7 +22,7 @@ function Saved({ events, saved, onToggleSaved, onNavigate }: SavedProps) {
         Keep your favorite activities in one place.
       </p>
 
-      {saved.length === 0 ? (
+      {savedEvents.length === 0 ? (
         <div className="empty">
           <h3>Nothing saved yet.</h3>
 
@@ -35,16 +37,14 @@ function Saved({ events, saved, onToggleSaved, onNavigate }: SavedProps) {
         </div>
       ) : (
         <div className="event-grid">
-          {events
-            .filter(event => saved.includes(event.id))
-            .map(event => (
-              <EventCard
-                key={event.id}
-                event={event}
-                saved={saved.includes(event.id)}
-                onToggleSaved={onToggleSaved}
-              />
-            ))}
+          {savedEvents.map(event => (
+            <EventCard
+              key={event.id}
+              event={event}
+              saved={saved.includes(event.id)}
+              onToggleSaved={onToggleSaved}
+            />
+          ))}
         </div>
       )}
     </section>
