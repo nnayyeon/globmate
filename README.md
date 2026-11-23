@@ -1,9 +1,10 @@
-
 # GLOBMATE
 
 A community platform for international students.
 
 GLOBMATE helps students connect, discover activities, and share experiences while studying abroad.
+
+**Live Demo:** Coming soon
 
 ## Features
 
@@ -22,6 +23,8 @@ React · TypeScript · Vite · CSS
 npm install
 npm run dev
 ```
+
+Open http://localhost:5173/ to run the project locally.
 
 ## Status
 
