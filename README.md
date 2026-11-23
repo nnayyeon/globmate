@@ -1,21 +1,22 @@
 # GLOBMATE
 
-A community platform for international students.
+A web app for international students to discover local events, meet new people, and connect with their community.
 
-GLOBMATE helps students connect, discover activities, and share experiences while studying abroad.
+Built as a frontend project using React and TypeScript.
 
-**Live Demo:** Coming soon
+**Live Demo:** https://globmate.vercel.app/
 
 ## Features
 
-- Explore student activities and events
-- Share posts and join conversations
-- Save interesting activities
-- Create and edit student profiles
+- **Explore:** Browse and search local events by category.
+- **Saved:** Bookmark events and access them later.
+- **Community:** Create posts, leave comments, and like posts.
+- **Profile:** Manage a demo user profile.
+- **Responsive Design:** Works on desktop and mobile.
 
 ## Tech Stack
 
-React · TypeScript · Vite · CSS
+React · TypeScript · Vite · CSS · localStorage · Vercel
 
 ## Getting Started
 
@@ -24,10 +25,11 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173/ to run the project locally.
+## Notes
 
-## Status
+This is a frontend demo project. Events and community content use sample data, and user interactions are stored locally in the browser.
 
-Frontend MVP in development.
+## Links
 
-Currently using sample data and local browser storage.
+- [Live Website](https://globmate.vercel.app/)
+- [GitHub Repository](https://github.com/nnayyeon/globmate)
